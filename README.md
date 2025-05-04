@@ -201,8 +201,16 @@ Now we would be checking on x64 how the rsrc is being mapped
 2. Now lets run it
 
 	<a href="https://github.com/user-attachments/assets/b6abca30-2fdf-4fd6-8cf0-70954c3f75cc" target="_blank">
-	  <img src="https://github.com/user-attachments/assets/b6abca30-2fdf-4fd6-8cf0-70954c3f75cc" width="400" />
+	  <img src="https://github.com/user-attachments/assets/b6abca30-2fdf-4fd6-8cf0-70954c3f75cc" width="1400" />
 	</a>
+ 3. Once we run it , we get two important content, exec_mem and then Payload_mem which is the virtually allocated space and Payload saved memory respectively
+ 4. Start the x64dbg now and attach the exe file . File->Attach
+
+	<a href="https://github.com/user-attachments/assets/f5aeb9ba-62f2-473e-a21c-d6c2bd7016d9" target="_blank">
+	  <img src="https://github.com/user-attachments/assets/f5aeb9ba-62f2-473e-a21c-d6c2bd7016d9" width="1400" />
+	</a>
+     	
+
 
 
 
