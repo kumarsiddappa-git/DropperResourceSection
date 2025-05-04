@@ -99,3 +99,27 @@ Sample line of code =>
  LPTHREAD_START_ROUTINE  Points to a function that notifies the host that a thread has started to execute and exec_mem start of payload to start
 
 We can find more detailed information in the link [CreateThread](https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-createthread)
+
+
+Now lets try to understand how to use the resource , here we have calc.ico which is the payload which we insert into the rsrc section. 
+
+1. Lets see how to generate that , for this i am using msfvenom to generate a shellcode which launches the calc.exe on windows and output is bin file. 
+
+   		msfvenom -p windows/exec CMD=calc.exe -f raw -o calc_shellcode.bin
+
+   we are generate a raw ouptut , the -p represents the command which is windows/exec with the input CMD=calc.exe , -f indicates the format of the output which is in raw format and -o indicates the output file and here we have clac_shellcode.bin as output
+
+2. Lets take the input and run a python code named bintoico.py and it genrates the calc.ico, the code does the simple work of reading the file in binary format (rb) and add the header details to make it the ico format
+   
+3. Now we create two files resource.h and resource.rc
+     a. The resource.h consisit of the code , which just define the CALC_ICO  equal to 100. We consider this as resource identifier for our example
+   
+   		#define CALC_ICO 100
+
+     b. The resource.rc file consist of the statement.
+
+		#include "resources.h"
+		CALC_ICO RCDATA calc.ico
+
+
+    The value "RCDATA" indicates i am creating a binary format data and naming it as 
