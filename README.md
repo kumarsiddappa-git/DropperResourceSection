@@ -153,6 +153,13 @@ Now lets try to understand how to use the resource , here we have calc.ico which
 
 Understanding the line of Code which are important to the resource access 
 
+		res = FindResource(NULL, MAKEINTRESOURCE(CALC_ICO), RT_RCDATA);
+		resHandle = LoadResource(NULL, res);
+		payload = (char *) LockResource(resHandle);
+		payload_len = SizeofResource(NULL, res);		
+
+  
+	
 
 		HRSRC FindResourceA(
 		  [in, optional] HMODULE hModule,
