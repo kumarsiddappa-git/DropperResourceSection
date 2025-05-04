@@ -151,7 +151,7 @@ Now lets try to understand how to use the resource , here we have calc.ico which
    		then the resource file to be linked is resources.o
 
 
-Understanding the line of Code which are important to the resource access 
+A. Understanding the line of Code which are important to the resource access 
 
 		res = FindResource(NULL, MAKEINTRESOURCE(CALC_ICO), RT_RCDATA);
 		resHandle = LoadResource(NULL, res);
@@ -159,7 +159,7 @@ Understanding the line of Code which are important to the resource access
 		payload_len = SizeofResource(NULL, res);		
 
 
-  To understand more on the [FindResource](https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-findresourcea)
+B. To understand more on the [FindResource](https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-findresourcea)
 	
 
 		HRSRC FindResourceA(
@@ -168,10 +168,35 @@ Understanding the line of Code which are important to the resource access
 		  [in]           LPCSTR  lpType
 		);
 
- Lets go through each parameter   
+C. Lets go through each parameter. The return type of the FindResource is the HSRBC , Handle to Resource   
   
   		Simple , hModule = if its NUll , it searches the resource file in the current process else the Handle provided   
    		lpName - its the resource Number which we have defined in the resources.h and also remember we have compiled before 
      	lptype - Type of data , we know we had declared in resource.rc as RCDATA , here we have RT_RCDATA which means arbitary raw data
+
+D. To Understand more on the [LoadResource](https://learn.microsoft.com/en-us/windows/win32/api/libloaderapi/nf-libloaderapi-loadresource)  
+
+
+		HGLOBAL LoadResource(
+		  [in, optional] HMODULE hModule,
+		  [in]           HRSRC   hResInfo
+		);
        
-   		
+The LoadResoruce tries to search the resource in the process depending on the first parameter which is hModule , if its NULL , loads resources from the current module else on the Handle provided. The res which is the resource handle which was returned from the FindResource function.
+
+E. We are creating the payload from the ico file or resource file/data now using the LockResource
+
+		LPVOID LockResource(
+	  	[in] HGLOBAL hResData
+		);	
+
+  	hResData is the Resource Handle which was returned from the LoadResource function call. and its locks it, once the payload is loaded , we will be finding the length of 
+        it to be used in VirtuallAlloc and the Moving the payload to memory.
+
+
+
+Now we would be checking on x64 how the rsrc is being mapped 
+
+
+	
+	
