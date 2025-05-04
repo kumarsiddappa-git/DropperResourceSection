@@ -158,7 +158,8 @@ Understanding the line of Code which are important to the resource access
 		payload = (char *) LockResource(resHandle);
 		payload_len = SizeofResource(NULL, res);		
 
-  
+
+  To understand more on the [FindResource](https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-findresourcea)
 	
 
 		HRSRC FindResourceA(
@@ -166,4 +167,11 @@ Understanding the line of Code which are important to the resource access
 		  [in]           LPCSTR  lpName,
 		  [in]           LPCSTR  lpType
 		);
+
+ Lets go through each parameter   
+  
+  		Simple , hModule = if its NUll , it searches the resource file in the current process else the Handle provided   
+   		lpName - its the resource Number which we have defined in the resources.h and also remember we have compiled before 
+     	lptype - Type of data , we know we had declared in resource.rc as RCDATA , here we have RT_RCDATA which means arbitary raw data
+       
    		
