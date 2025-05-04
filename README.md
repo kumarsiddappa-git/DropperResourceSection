@@ -151,5 +151,12 @@ Now lets try to understand how to use the resource , here we have calc.ico which
    		then the resource file to be linked is resources.o
 
 
-Understanding the Code which are important to the resource access 
+Understanding the line of Code which are important to the resource access 
+
+
+		HRSRC FindResourceA(
+		  [in, optional] HMODULE hModule,
+		  [in]           LPCSTR  lpName,
+		  [in]           LPCSTR  lpType
+		);
    		
