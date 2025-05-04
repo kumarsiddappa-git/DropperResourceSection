@@ -209,6 +209,46 @@ Now we would be checking on x64 how the rsrc is being mapped
 	<a href="https://github.com/user-attachments/assets/f5aeb9ba-62f2-473e-a21c-d6c2bd7016d9" target="_blank">
 	  <img src="https://github.com/user-attachments/assets/f5aeb9ba-62f2-473e-a21c-d6c2bd7016d9" width="1400" />
 	</a>
+ 5. Once attached lets check on the memory what it has
+
+	     	<a href="https://github.com/user-attachments/assets/d47efeac-0ad1-42fe-8ed8-cbc46d5b99ad" target="_blank">
+		  <img src="https://github.com/user-attachments/assets/d47efeac-0ad1-42fe-8ed8-cbc46d5b99ad" width="1400" />
+		</a>
+
+
+    Lets copy the payload memory and see where its saved , I mean in which section
+
+    So lets right click in the Dump tab and then select Go - > Expression 
+
+    	<a href="https://github.com/user-attachments/assets/4cdb176b-24f6-43d2-a603-d7f33bce076e" target="_blank">
+	  <img src="https://github.com/user-attachments/assets/4cdb176b-24f6-43d2-a603-d7f33bce076e" width="1400" />
+	</a>
+
+
+    In the textbox paste the payload_mem copied before. Please validate the details marked in Yellow , which clarifies its the payload meomry
+    Point 1 and point 3 clarify its the payload _mem and then Point 2 tells the payload in calc.exe, which you can even open the resource.res file and valiate at the last line.
+
+
+
+    	<a href="https://github.com/user-attachments/assets/829eaef6-ae19-496e-9467-91adc0c7d28c" target="_blank">
+	  <img src="https://github.com/user-attachments/assets/829eaef6-ae19-496e-9467-91adc0c7d28c" width="1400" />
+	</a>
+
+ Now final step to check where this payload is saved , I mean which section 
+
+ Lets copy the payload mem again and go to Memory Map tab and then , here we can see at pint 1 the payload memory which falls between 00007FF7E3602000 and 00007FF7E3603000
+ This memory space is the space where the rsrc section is placed in the PE file so that means our resource payload is saved in the rsrc section.
+
+<a href="https://github.com/user-attachments/assets/d77ee8dd-15ba-414d-8fcf-2833df379c56" target="_blank">
+      <img src="https://github.com/user-attachments/assets/d77ee8dd-15ba-414d-8fcf-2833df379c56" width="1400" />
+   </a>
+
+
+@Sektor7 learning 
+ 	
+
+
+
      	
 
 
