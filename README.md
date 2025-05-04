@@ -137,5 +137,19 @@ Now lets try to understand how to use the resource , here we have calc.ico which
 
 	This command converts the given the resource file resource.res to resource.o , which is an object file. later we would be adding this to our compiled code
 7. Here comes the main compiler command which mentiones to add the resource.o to the script while compiling
-8. 
-9. 
+   
+		cl.exe /nologo /Ox /MT /W0 /GS- /DNDEBUG /Tcresourceimplant.cpp /link /OUT:resourceimplant.exe /SUBSYSTEM:CONSOLE /MACHINE:x64 resources.o
+
+   Everything after the link is important which are sent to the linker (link.exe)
+
+ 		/OUT:resourceimplant.exe  output as resourceimplant.exe
+
+   		/SUBSYSTEM:CONSOLE - create a code for Console
+
+   		/MACHINE:x64 machine architecture 64 bit and
+
+   		then the resource file to be linked is resources.o
+
+
+Understanding the Code which are important to the resource access 
+   		
