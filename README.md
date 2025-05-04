@@ -126,4 +126,16 @@ Now lets try to understand how to use the resource , here we have calc.ico which
     the current directory, provided the name)
 
 4. Lets check on how to compile them and keep them in PE so the PE can refer it later and place them in the rsrc section
-5. 
+   
+		rc resource.rc
+
+   	Which means compile the resource.rc and gives us the resource.res
+
+6. Once the resource.res is generated we would be providing it as an input to the the other command  
+
+		cvtres /MACHINE:x64 /OUT:resources.o resources.res
+
+	This command converts the given the resource file resource.res to resource.o , which is an object file. later we would be adding this to our compiled code
+7. Here comes the main compiler command which mentiones to add the resource.o to the script while compiling
+8. 
+9. 
