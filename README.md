@@ -122,4 +122,8 @@ Now lets try to understand how to use the resource , here we have calc.ico which
 		CALC_ICO RCDATA calc.ico
 
 
-    The value "RCDATA" indicates i am creating a binary format data and naming it as 
+    The value "RCDATA" indicates i am creating a binary format data and naming it as CALC_ICO and the file is calc.ico (we can provide the specific path , since the file is in 
+    the current directory, provided the name)
+
+4. Lets check on how to compile them and keep them in PE so the PE can refer it later and place them in the rsrc section
+5. 
