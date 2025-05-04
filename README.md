@@ -200,9 +200,9 @@ Now we would be checking on x64 how the rsrc is being mapped
 1. Initally the compile goes in and a resource.res file is created and also resourceimplant.exe
 2. Now lets run it
 
-<a href="https://github.com/user-attachments/assets/b6abca30-2fdf-4fd6-8cf0-70954c3f75cc" target="_blank">
-  <img src="https://github.com/user-attachments/assets/b6abca30-2fdf-4fd6-8cf0-70954c3f75cc" width="400" />
-</a>
+	<a href="https://github.com/user-attachments/assets/b6abca30-2fdf-4fd6-8cf0-70954c3f75cc" target="_blank">
+	  <img src="https://github.com/user-attachments/assets/b6abca30-2fdf-4fd6-8cf0-70954c3f75cc" width="400" />
+	</a>
 
 
 
