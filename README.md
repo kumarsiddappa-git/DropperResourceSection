@@ -244,6 +244,10 @@ Now we would be checking on x64 how the rsrc is being mapped
    </a>
 
 
+
+For Data Section do refer to [DataSection](https://github.com/kumarsiddappa-git/DropperDataSection)
+For Text Section do refer to [TextSection](https://github.com/kumarsiddappa-git/Dropper)
+
 @Sektor7 learning 
  	
 
